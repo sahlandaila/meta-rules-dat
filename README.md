@@ -119,19 +119,41 @@ list geosite: `abema / apple / applemusic / bilibili / biliintl / bahamut / cn /
 
 
 ## **OpenClash-Meta**
+
+[Download Full Config Meta](https://github.com/rtaserver/Config-Open-ClashMeta?tab=readme-ov-file#----config-openclash---meta-kernel)
 ```yaml
 
 rules:
-  # GEOSITE
-  - GEOSITE,category-ads-all,REJECT
-  - GEOSITE,rule-umum,PROXY
-  
-  # GEOIP
-  - GEOIP,facebook,DIRECT
-  - GEOIP,telegram,PROXY
-  - GEOIP,ID,PROXY
-  - DST-PORT,80/8080/443/8443,PROXY
-  - MATCH,GLOBAL
+- DST-PORT,7895,REJECT
+- DST-PORT,7892,REJECT
+- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+- DST-PORT,123/136/137-139,Traffic-Direct,udp
+- RULE-SET,RP-Direct,Traffic-Direct
+- RULE-SET,RP-Reject,Traffic-Manual-Reject
+- AND,((NETWORK,udp),(OR,((DST-PORT,443),(GEOSITE,youtube)))),REJECT
+- AND,((GEOSITE,oisd-full),(NOT,((DOMAIN-SUFFIX,googlesyndication.com)))),Traffic-Ads
+- AND,((GEOSITE,rule-ads),(NOT,((DOMAIN-SUFFIX,googlesyndication.com)))),Traffic-Ads
+- GEOSITE,oisd-nsfw,Traffic-Porn
+- GEOIP,GOOGLE,Traffic-Browsing
+- GEOSITE,GOOGLE,Traffic-Browsing
+- AND,((NETWORK,TCP),(DST-PORT,5228-5230),(OR,((DOMAIN-KEYWORD,google)))),Traffic-Browsing
+- AND,((NETWORK,UDP),(DST-PORT,5228-5230),(OR,((DOMAIN-KEYWORD,google)))),Traffic-Browsing
+- GEOSITE,rule-indo,Traffic-Indo
+- GEOSITE,rule-sosmed,Traffic-Indo
+- GEOSITE,rule-streaming,Traffic-Indo
+- GEOIP,id,Traffic-Indo
+- GEOIP,facebook,Traffic-Indo
+- GEOIP,netflix,Traffic-Indo
+- GEOIP,telegram,Traffic-Indo
+- GEOIP,twitter,Traffic-Indo
+- RULE-SET,RP-Indo,Traffic-Indo
+- GEOSITE,rule-gaming,Traffic-Gaming
+- AND,((NOT,((RULE-SET,RP-Umum))),(NETWORK,TCP)),Traffic-Gaming-Port
+- AND,((NOT,((RULE-SET,RP-Umum))),(NETWORK,UDP)),Traffic-Gaming-Port
+- GEOSITE,rule-speedtest,Traffic-Browsing
+- AND,((RULE-SET,RP-Umum),(NETWORK,TCP)),Traffic-Browsing
+- AND,((RULE-SET,RP-Umum),(NETWORK,UDP)),Traffic-Browsing
+- MATCH,Traffic-Browsing
 ```
 
 ## Thangks To
