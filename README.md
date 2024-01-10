@@ -33,25 +33,43 @@
 
 - Cara penggunaannya sama dengan [Loyalsoldier/v2ray-rules-dat](https://github.com/Loyalsoldier/v2ray-rules-dat)  
 
-| geosite.dat,geosite.db | geosite-lite.dat,geosite-lite.db |
-| ---------------- | ----------------------------- | 
-|  `geosite:category-ads-all` | `geosite:apple` |
-|  `geosite:oisd-full` | `geosite:applemusic` |
-|  `geosite:oisd-small` | `geosite:biliintl` |
-|  `geosite:oisd-nsfw` | `geosite:ehentai` |
-|  `geosite:rule-ads` | `geosite:google` |
-|  `geosite:rule-doh` | `geosite:github` |
-|  `geosite:rule-gaming` | `geosite:microsoft` |
-|  `geosite:rule-indo` | `geosite:netflix` |
-|  `geosite:rule-playstore` | `geosite:spotify` |
-|  `geosite:rule-sosmed` | `geosite:telegram` |
-|  `geosite:rule-streaming` | `geosite:twitter` |
-|  `geosite:rule-umum` | `geosite:tiktok` |
-|  `geosite:rule-ipcheck` | `geosite:youtube` |
-|  `geosite:rule-speedtest` | |
-|  `geosite:videoconference` | |
-|  `geosite:rule-malicious` | |
-|  `geosite:urltest` | |
+| geosite.dat,geosite.db |
+| ---------------- |
+|  `geosite:category-ads-all` |
+|  `geosite:oisd-full` |
+|  `geosite:oisd-small` |
+|  `geosite:oisd-nsfw` |
+|  `geosite:ads-ultimate` |
+|  `geosite:rule-ads` |
+|  `geosite:rule-doh` |
+|  `geosite:rule-gaming` |
+|  `geosite:rule-indo` |
+|  `geosite:rule-playstore` |
+|  `geosite:rule-sosmed` |
+|  `geosite:rule-streaming` |
+|  `geosite:rule-umum` |
+|  `geosite:rule-ipcheck` |
+|  `geosite:rule-speedtest` |
+|  `geosite:videoconference` |
+|  `geosite:rule-malicious` |
+|  `geosite:urltest` |
+
+| geosite-lite.dat,geosite-lite.db |
+| ----------------------------- | 
+| `geosite:apple` |
+| `geosite:applemusic` |
+| `geosite:biliintl` |
+| `geosite:ehentai` |
+| `geosite:google` |
+| `geosite:github` |
+| `geosite:microsoft` |
+| `geosite:netflix` |
+| `geosite:spotify` |
+| `geosite:telegram` |
+| `geosite:twitter` |
+| `geosite:tiktok` |
+| `geosite:youtube` |
+
 
 | Name Content | Link Download |
 | ------------ | ------------- |
